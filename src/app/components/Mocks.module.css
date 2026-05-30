@@ -1,0 +1,151 @@
+/* Shared "fake content" mockups used in Engines cards and the Work grid.
+   Each fills its positioned parent (inset: 0). */
+
+/* ── LinkedIn post mock ────────────────────────────── */
+.liPost {
+  position: absolute; inset: 0;
+  padding: 14px;
+  display: flex; flex-direction: column;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02), transparent 30%),
+    var(--bg);
+  color: var(--fg);
+  font-size: 11px;
+  overflow: hidden;
+}
+.liHead { display: flex; gap: 8px; align-items: center; }
+.liAvatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: grid; place-items: center;
+  font-family: var(--font-display); font-weight: 600; font-size: 11px;
+  color: var(--bg);
+  flex-shrink: 0;
+}
+.liMeta b { font-weight: 600; font-size: 11px; }
+.liSub { color: var(--fg-dim); font-size: 9.5px; margin-top: 1px; }
+.liBody { margin-top: 10px; font-size: 11px; line-height: 1.45; color: var(--fg); }
+.high { background: linear-gradient(transparent 65%, color-mix(in oklab, var(--accent) 30%, transparent) 65%); }
+.liStats {
+  margin-top: auto; padding-top: 10px;
+  display: flex; gap: 12px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono); font-size: 9.5px; color: var(--fg-dim);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.liStats span { display: inline-flex; gap: 4px; align-items: center; }
+.liStats b { color: var(--fg); font-weight: 500; font-family: var(--font-display); font-size: 11px; }
+
+/* ── Video mock ────────────────────────────────────── */
+.vidMock {
+  position: absolute; inset: 0;
+  background: var(--bg-3);
+  display: grid; place-items: center;
+  overflow: hidden;
+}
+.vidMock::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(60% 60% at 30% 35%, color-mix(in oklab, var(--accent-2) 30%, transparent), transparent 70%),
+    radial-gradient(60% 50% at 80% 70%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 70%),
+    linear-gradient(135deg, #1a1a25, #0d0d12);
+  animation: bgShift 12s ease-in-out infinite alternate;
+}
+@keyframes bgShift {
+  to { transform: scale(1.08) rotate(2deg); }
+}
+.silhouette {
+  position: absolute; bottom: 0; left: 50%;
+  width: 60%; height: 65%;
+  transform: translateX(-50%);
+  background: radial-gradient(60% 50% at 50% 30%, #2a2a35 0%, transparent 70%),
+              linear-gradient(180deg, transparent 0%, #050507 80%);
+}
+.silhouette::before {
+  content: ""; position: absolute;
+  left: 50%; top: 22%;
+  transform: translateX(-50%);
+  width: 35%; aspect-ratio: 1/1.1; border-radius: 50%;
+  background: linear-gradient(180deg, #38384a, #1a1a25);
+  box-shadow: 0 -20px 50px color-mix(in oklab, var(--accent) 25%, transparent);
+}
+.silhouette::after {
+  content: ""; position: absolute;
+  left: 50%; top: 60%;
+  transform: translateX(-50%);
+  width: 70%; height: 60%;
+  background: linear-gradient(180deg, #2a2a38, #08080c);
+  clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+}
+.play {
+  position: relative; z-index: 2;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: color-mix(in oklab, var(--bg) 60%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: grid; place-items: center;
+}
+.play::after {
+  content: ""; width: 0; height: 0;
+  border-left: 11px solid var(--fg);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  margin-left: 3px;
+}
+.badge {
+  position: absolute; top: 10px; left: 10px;
+  font-family: var(--font-mono); font-size: 9px;
+  background: var(--accent); color: var(--accent-ink);
+  padding: 3px 6px; border-radius: 4px; letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.duration {
+  position: absolute; bottom: 10px; right: 10px;
+  font-family: var(--font-mono); font-size: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 3px 6px; border-radius: 4px;
+  color: #fff;
+}
+.caption {
+  position: absolute; bottom: 36px; left: 10px; right: 10px;
+  font-family: var(--font-display); font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+  text-wrap: balance;
+}
+
+/* ── AI ad mock ────────────────────────────────────── */
+.adMock {
+  position: absolute; inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  background: var(--bg);
+}
+.adCell {
+  position: relative; overflow: hidden;
+  border-radius: 8px;
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.9);
+}
+.adCell::before {
+  content: ""; position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+}
+.adCell:nth-child(1)::before { background: linear-gradient(135deg, #ff6b35 0%, #c93b6a 100%); }
+.adCell:nth-child(2)::before { background: linear-gradient(135deg, #7c5cff 0%, #3b5bdb 100%); }
+.adCell:nth-child(3)::before { background: linear-gradient(135deg, #1f8a5b 0%, #0d3b2e 100%); }
+.adCell:nth-child(4)::before { background: linear-gradient(135deg, #c9ff3b 0%, #4a6157 100%); }
+.adCell span {
+  position: relative; z-index: 2;
+  padding: 4px 6px;
+  background: rgba(0,0,0,0.45);
+  border-radius: 3px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.adCell:nth-child(4) span { color: var(--bg); background: rgba(255,255,255,0.7); }

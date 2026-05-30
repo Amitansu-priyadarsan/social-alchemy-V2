@@ -1,0 +1,108 @@
+.section {
+  padding: 120px 0;
+  position: relative;
+  border-top: 1px solid var(--line);
+}
+
+.wrap { max-width: 1440px; margin: 0 auto; padding: 0 48px; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+/* ── Card ──────────────────────────────────────────── */
+.engine {
+  display: flex; flex-direction: column;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 24px;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.engine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px 220px at var(--mx,50%) var(--my,0%), color-mix(in oklab, var(--accent) 12%, transparent), transparent 60%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+.engine:hover { transform: translateY(-4px); border-color: var(--line-2); }
+.engine:hover::before { opacity: 1; }
+
+.featured {
+  background: linear-gradient(160deg, color-mix(in oklab, var(--accent) 20%, var(--bg-2)) 0%, var(--bg-2) 70%);
+  border-color: color-mix(in oklab, var(--accent) 40%, var(--line));
+}
+.featured::after {
+  content: "POPULAR";
+  position: absolute; top: 16px; right: 16px; z-index: 2;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  background: var(--accent); color: var(--accent-ink);
+  padding: 4px 8px; border-radius: 4px;
+  font-weight: 600;
+}
+
+.art {
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--fg-dim);
+  display: flex; justify-content: space-between; align-items: center;
+  text-transform: uppercase;
+}
+
+.engine h3 {
+  font-family: var(--font-display);
+  font-weight: 600; letter-spacing: -0.02em;
+  font-size: 30px; line-height: 1.0;
+  margin: 0;
+}
+
+.lede { color: var(--fg-soft); margin: 0; font-size: 15px; line-height: 1.5; }
+
+.engine ul { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+.engine ul li {
+  display: grid; grid-template-columns: 16px 1fr; align-items: start; gap: 8px;
+  color: var(--fg);
+}
+.engine ul li::before {
+  content: "+"; color: var(--accent); font-family: var(--font-mono); font-weight: 500;
+  margin-top: 1px;
+}
+
+.best {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.best b { color: var(--fg); font-weight: 500; }
+
+.pricingNote {
+  margin-top: 32px; text-align: center;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em;
+  color: var(--fg-soft); text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .wrap { padding: 0 24px; }
+}

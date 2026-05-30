@@ -1,0 +1,64 @@
+.section {
+  padding: 120px 0;
+  position: relative;
+  border-top: 1px solid var(--line);
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 48px;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  position: relative;
+}
+.inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(50% 60% at 50% 50%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 65%);
+  z-index: -1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  margin: 0;
+  text-wrap: balance;
+  font-size: clamp(44px, 6.5vw, 104px);
+}
+
+.emGrad {
+  background: linear-gradient(95deg, var(--accent) 0%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  animation: shimmer 6s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.lede {
+  font-size: clamp(18px, 1.4vw, 22px);
+  color: var(--fg-soft);
+  max-width: 48ch;
+  margin: 0;
+}
+
+.note {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fg-soft);
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .inner { padding: 60px 24px; }
+}

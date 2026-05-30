@@ -1,0 +1,33 @@
+.siteHeader {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in oklab, var(--bg) 60%, transparent);
+  backdrop-filter: saturate(160%) blur(18px);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.wrap { max-width: 1440px; margin: 0 auto; padding: 0 48px; }
+
+.row { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 600; letter-spacing: -0.02em; font-size: 18px;
+}
+
+.brandMark {
+  width: 24px; height: 24px; border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, color-mix(in oklab, var(--accent) 90%, white 20%), color-mix(in oklab, var(--accent-2) 80%, black 10%) 70%);
+  box-shadow: 0 0 18px color-mix(in oklab, var(--accent) 55%, transparent);
+  position: relative;
+  animation: spin 14s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.nav { display: flex; gap: 28px; font-size: 14px; color: var(--fg-soft); }
+.nav a:hover { color: var(--fg); }
+
+@media (max-width: 820px) { .nav { display: none; } }
+@media (max-width: 720px) { .wrap { padding: 0 24px; } }

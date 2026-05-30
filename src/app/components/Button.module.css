@@ -1,0 +1,27 @@
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-body); font-weight: 500; font-size: 14px;
+  padding: 11px 18px; border-radius: 999px;
+  background: var(--fg); color: var(--bg);
+  border: 1px solid var(--fg);
+  cursor: pointer; transition: transform .15s ease, box-shadow .2s ease;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.accent {
+  background: var(--accent); border-color: var(--accent); color: var(--accent-ink);
+  box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 40%, transparent);
+}
+.accent:hover { box-shadow: 0 0 30px color-mix(in oklab, var(--accent) 50%, transparent); }
+
+.ghost {
+  background: color-mix(in oklab, var(--bg-3) 70%, transparent);
+  color: var(--fg);
+  border-color: var(--line-2);
+  backdrop-filter: blur(8px);
+}
+.ghost:hover { border-color: var(--fg-soft); background: var(--bg-3); }
+
+.lg { padding: 18px 26px; font-size: 15px; }
+.xl { padding: 24px 38px; font-size: 17px; }

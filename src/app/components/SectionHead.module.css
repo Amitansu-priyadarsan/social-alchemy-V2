@@ -1,0 +1,25 @@
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 64px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  margin: 0;
+  text-wrap: balance;
+  font-size: clamp(36px, 4.5vw, 72px);
+}
+
+.lede {
+  font-size: clamp(18px, 1.4vw, 22px);
+  line-height: 1.5;
+  color: var(--fg-soft);
+  max-width: 60ch;
+  text-wrap: pretty;
+  margin: 0;
+}

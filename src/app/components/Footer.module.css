@@ -1,0 +1,39 @@
+.top { padding-top: 80px; }
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  font-size: clamp(80px, 18vw, 320px);
+  text-align: center;
+  padding: 32px 24px 0;
+  overflow: hidden;
+  text-transform: lowercase;
+  white-space: nowrap;
+  background: linear-gradient(180deg, var(--fg) 0%, transparent 95%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  position: relative;
+}
+.accentWord {
+  background: linear-gradient(180deg, var(--accent) 0%, transparent 95%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+
+.bar {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px 48px 40px;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.bar a:hover { color: var(--fg); }
+.group { display: flex; gap: 24px; flex-wrap: wrap; }
+
+@media (max-width: 720px) {
+  .bar { padding: 24px 24px 40px; }
+}

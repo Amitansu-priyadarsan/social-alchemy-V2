@@ -1,0 +1,23 @@
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 12px var(--accent);
+  animation: glow 2s ease-in-out infinite;
+}
+@keyframes glow {
+  0%,100% { box-shadow: 0 0 6px color-mix(in oklab, var(--accent) 60%, transparent); }
+  50%     { box-shadow: 0 0 18px color-mix(in oklab, var(--accent) 100%, transparent); }
+}
