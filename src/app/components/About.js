@@ -30,7 +30,7 @@ export default function About() {
           <div className={styles.links}>
             <a href="#">LinkedIn →</a>
             <a href="#">X / Twitter →</a>
-            <a href="mailto:hello@socialalchemy.in">Email →</a>
+            <a href="mailto:adriot2002@gmail.com">Email →</a>
           </div>
         </div>
       </Reveal>

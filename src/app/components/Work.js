@@ -109,7 +109,7 @@ export default function Work() {
                 <span className={styles.tag}>{item.tag}</span>
                 {item.mock}
                 <div className={styles.caption}>
-                  <h4>{item.title}</h4>
+                  <h3>{item.title}</h3>
                   <span>{item.note}</span>
                 </div>
               </div>

@@ -31,12 +31,27 @@ const FAQS = [
   },
 ];
 
+// FAQPage structured data — helps search/AI engines surface these Q&As.
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function Faq() {
   // Single-open accordion; first item open by default.
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
     <section id="faq" className={styles.section}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className={styles.wrap}>
         <SectionHead
           eyebrow="07 / FAQ"

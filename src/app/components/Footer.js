@@ -13,7 +13,7 @@ export default function Footer() {
             <span>Bhubaneswar, IN</span>
           </div>
           <div className={styles.group}>
-            <a href="mailto:hello@socialalchemy.in">hello@socialalchemy.in</a>
+            <a href="mailto:adriot2002@gmail.com">adriot2002@gmail.com</a>
             <a href="#">LinkedIn</a>
             <a href="#">X</a>
           </div>

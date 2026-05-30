@@ -38,7 +38,7 @@ export default function Process() {
           {STEPS.map((s, i) => (
             <Reveal key={i} className={styles.step}>
               <div className={styles.n}>{s.n}</div>
-              <h4>{s.title}</h4>
+              <h3>{s.title}</h3>
               <p>{s.body}</p>
             </Reveal>
           ))}
